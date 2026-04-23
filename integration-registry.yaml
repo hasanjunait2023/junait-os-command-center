@@ -1,0 +1,87 @@
+meta:
+  system: Junait OS
+  mode: founder-command-center
+  owner: Junait
+  orchestrator: JAMAL
+  last_initialized: 2026-04-24
+
+modules:
+  admin_command_center:
+    status: initialized
+    realtime: local
+    owner: JAMAL
+    source: monitoring-dashboard.html
+  automation_control:
+    status: planned
+    realtime: target
+    owner: Andrej
+    sources: [cronjob, webhook, agent automations]
+  business_operations:
+    status: planned
+    realtime: target
+    owner: JAMAL
+    sources: [manual snapshots, sheets, dashboards]
+  finance_cashflow:
+    status: planned
+    realtime: target
+    owner: JAMAL
+    sources: [sheets, payment systems, manual snapshots]
+  hosting_infrastructure:
+    status: connectable
+    realtime: near-realtime
+    owner: Dan
+    sources: [Hostinger, Coolify, DNS, VPS]
+  projects_delivery:
+    status: connectable
+    realtime: near-realtime
+    owner: JAMAL
+    sources: [GitHub, Linear, Notion, local plans]
+  lms_students:
+    status: planned
+    realtime: target
+    owner: JAMAL
+    sources: [LMS database, sheets, CRM]
+  messaging_communications:
+    status: partially-connected
+    realtime: live
+    owner: JAMAL
+    sources: [Telegram]
+  research_market_intel:
+    status: available
+    realtime: periodic
+    owner: Elon
+    sources: [web research, blogwatcher, arxiv, feeds]
+  social_content:
+    status: planned
+    realtime: periodic
+    owner: Susan
+    sources: [content calendar, social channels]
+  trading_performance:
+    status: planned
+    realtime: target
+    owner: JAMAL
+    sources: [journal, sheets, screenshots, metrics]
+  quality_risk:
+    status: initialized
+    realtime: local
+    owner: Grace
+    sources: [qa reviews, release gates]
+  visibility_analytics:
+    status: planned
+    realtime: target
+    owner: JAMAL
+    sources: [combined metrics]
+
+alerts:
+  critical:
+    - infra down
+    - release failed
+    - payment / auth flow broken
+    - key automation broken
+  warning:
+    - stale metrics
+    - integration disconnected
+    - backlog blocked
+  info:
+    - daily summary
+    - weekly executive review

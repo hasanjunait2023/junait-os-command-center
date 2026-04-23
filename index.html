@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Junait OS</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #131a2e;
+      --soft: #1c2440;
+      --text: #edf2ff;
+      --muted: #9fb0d9;
+      --ok: #22c55e;
+      --warn: #f59e0b;
+      --crit: #ef4444;
+      --info: #38bdf8;
+      --accent: #8b5cf6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: linear-gradient(180deg, #0a0f1d, #11182d); color: var(--text); }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero { display:flex; justify-content:space-between; gap:20px; align-items:flex-start; margin-bottom: 22px; }
+    .hero h1 { margin:0 0 8px; font-size: 32px; }
+    .muted { color: var(--muted); }
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap:16px; }
+    .card { background: rgba(19,26,46,.92); border: 1px solid rgba(159,176,217,.14); border-radius: 16px; padding: 16px; box-shadow: 0 12px 30px rgba(0,0,0,.22); }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .status { display:inline-block; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700; }
+    .ok { background: rgba(34,197,94,.16); color: #86efac; }
+    .warn { background: rgba(245,158,11,.16); color: #fcd34d; }
+    .crit { background: rgba(239,68,68,.16); color: #fca5a5; }
+    .info { background: rgba(56,189,248,.16); color: #7dd3fc; }
+    ul, ol { padding-left: 18px; }
+    .metric { font-size: 30px; font-weight: 800; margin-top: 8px; }
+    .section-title { margin: 0 0 8px; font-size: 18px; }
+    .small { font-size: 13px; color: var(--muted); }
+    .table { width:100%; border-collapse: collapse; }
+    .table td, .table th { padding: 10px 8px; border-bottom: 1px solid rgba(159,176,217,.12); text-align:left; }
+    .cta { color:#c4b5fd; font-weight:700; }
+    a { color: #c4b5fd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .doc-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+    .pill { padding:8px 12px; border-radius:999px; background: rgba(139,92,246,.16); color:#ddd6fe; font-size:13px; font-weight:700; }
+    code { background: rgba(159,176,217,.1); padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Junait OS Command Center</h1>
+        <div class="muted">Founder operating system for realtime monitoring, Blackforge execution routing, and integration health.</div>
+        <div class="doc-links">
+          <a class="pill" href="./README.md">README</a>
+          <a class="pill" href="./master-architecture.md">Architecture</a>
+          <a class="pill" href="./module-map.md">Module Map</a>
+          <a class="pill" href="./ops-playbook.md">Ops Playbook</a>
+          <a class="pill" href="./launch-sequence.md">Launch Sequence</a>
+          <a class="pill" href="./integration-registry.yaml">Integration Registry</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="small">Mode</div>
+        <div class="metric">Blackforge Active</div>
+        <div class="small">Orchestrator: JAMAL</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card span-3">
+        <div class="section-title">Critical Alerts</div>
+        <span class="status crit">Needs live feed</span>
+        <ul>
+          <li>Infra down</li>
+          <li>Release failure</li>
+          <li>Payment/auth issue</li>
+        </ul>
+      </div>
+      <div class="card span-3">
+        <div class="section-title">Today’s Priorities</div>
+        <span class="status info">Founder view</span>
+        <ul>
+          <li>Connect infra sources</li>
+          <li>Connect project/task visibility</li>
+          <li>Add Telegram alert digest</li>
+        </ul>
+      </div>
+      <div class="card span-3">
+        <div class="section-title">Integration Health</div>
+        <div class="metric">3 / 13</div>
+        <div class="small">Initialized or partially connected modules</div>
+      </div>
+      <div class="card span-3">
+        <div class="section-title">Next Best Action</div>
+        <div class="cta">Hook Hostinger / GitHub / alerts first</div>
+        <div class="small">That unlocks the fastest monitoring value.</div>
+      </div>
+
+      <div class="card span-8">
+        <div class="section-title">Module Status Board</div>
+        <table class="table">
+          <thead>
+            <tr><th>Module</th><th>Status</th><th>Owner</th><th>Mode</th><th>Next action</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Admin command center</td><td><span class="status ok">Initialized</span></td><td>JAMAL</td><td>Local</td><td>Use dashboard as control surface</td></tr>
+            <tr><td>Hosting / infrastructure</td><td><span class="status warn">Connectable</span></td><td>Dan</td><td>Near-realtime</td><td>Hook Hostinger / Coolify / DNS</td></tr>
+            <tr><td>Projects / delivery</td><td><span class="status warn">Connectable</span></td><td>JAMAL</td><td>Near-realtime</td><td>Connect GitHub / task source</td></tr>
+            <tr><td>Messaging</td><td><span class="status ok">Partial</span></td><td>JAMAL</td><td>Live</td><td>Add alerts routing</td></tr>
+            <tr><td>Finance</td><td><span class="status info">Planned</span></td><td>JAMAL</td><td>Target</td><td>Choose data source</td></tr>
+            <tr><td>LMS / students</td><td><span class="status info">Planned</span></td><td>JAMAL</td><td>Target</td><td>Map fields and status cards</td></tr>
+            <tr><td>Trading</td><td><span class="status info">Planned</span></td><td>JAMAL</td><td>Target</td><td>Connect journal / metrics source</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card span-4">
+        <div class="section-title">Blackforge Routing</div>
+        <ul>
+          <li>JAMAL -> orchestration</li>
+          <li>Elon -> scope / strategy</li>
+          <li>Linus -> architecture</li>
+          <li>Zuckerberg -> build</li>
+          <li>Grace -> QA gate</li>
+          <li>Andrej -> AI / automation</li>
+          <li>Susan -> UX</li>
+          <li>Dan -> release / infra</li>
+        </ul>
+      </div>
+
+      <div class="card span-6">
+        <div class="section-title">Founder Monitoring Loop</div>
+        <ol>
+          <li>Check critical alerts</li>
+          <li>Review top priorities</li>
+          <li>Review module health</li>
+          <li>Issue a <code>BLACKFORGE TASK</code></li>
+          <li>Monitor execution + blockers</li>
+        </ol>
+      </div>
+
+      <div class="card span-6">
+        <div class="section-title">Immediate Build Sequence</div>
+        <ol>
+          <li>Connect infra data sources</li>
+          <li>Connect project/task visibility</li>
+          <li>Add Telegram alert digest</li>
+          <li>Add finance snapshot cards</li>
+          <li>Add LMS / SaaS status cards</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
